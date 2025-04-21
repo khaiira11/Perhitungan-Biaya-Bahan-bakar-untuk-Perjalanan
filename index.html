@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Biaya Bahan Bakar dengan Integral</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tombol Info -->
+    <div class="info-button" onclick="toggleInfo()">i</div>
+    <!-- Modal Info -->
+    <div class="info-modal" id="infoModal">
+        <div class="info-content">
+            <span class="close" onclick="toggleInfo()">&times;</span>
+            <h3>Cara Menggunakan Program:</h3>
+            <ol style="text-align: left;">
+                <li>Masukkan jarak perjalanan dalam kilometer (km). Jika masih dalam satuan lain misalnya meter (m) maka ubah terlebih dahulu.</li>
+                <li>Masukkan kecepatan rata-rata kendaraan dalam km/jam.</li>
+                <li>Masukkan harga bahan bakar per liter dalam Rupiah (Rp).</li>
+                <li>Klik tombol "Hitung".</li>
+                <li>Hasil konsumsi dan biaya akan ditampilkan, beserta grafik perbandingan kecepatan dan konsumsi bahan bakar.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Kalkulator Biaya Bahan Bakar</h2>
+        <label>Jarak Perjalanan (km):</label>
+        <input type="number" id="jarak" placeholder="Masukkan jarak">
+        
+        <label>Kecepatan Rata-rata (km/jam):</label>
+        <input type="number" id="kecepatan" placeholder="Masukkan kecepatan">
+        
+        <label>Harga Bahan Bakar (Rp/liter):</label>
+        <input type="number" id="harga" placeholder="Masukkan harga bahan bakar">
+        
+        <button onclick="hitungBiaya()">Hitung</button>
+        
+        <h3>Hasil:</h3>
+        <p id="hasil"></p>
+        <canvas id="grafik"></canvas>
+         <p id="penjelasanGrafik" class="grafik-penjelasan" style="display: none;">
+    Grafik di atas menunjukkan hubungan antara kecepatan kendaraan dan konsumsi bahan bakar.
+    Seiring peningkatan kecepatan, konsumsi bahan bakar per 100 km juga meningkat.
+    Hal ini menandakan bahwa berkendara terlalu cepat dapat menyebabkan pemborosan bahan bakar.
+</p>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
